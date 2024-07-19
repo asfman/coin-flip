@@ -11,8 +11,8 @@ const fontSans = FontSans({
 })
 
 export const metadata: Metadata = {
-  title: "Treasure Hunt",
-  description: "winner takes all",
+  title: "Flip Coin",
+  description: "aptos flip coin game",
 };
 
 export default function RootLayout({
