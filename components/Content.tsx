@@ -36,7 +36,7 @@ export function Content() {
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 p-4">
         {
           GAME_IDS.map((id) => (
-            <Game key={id} gameId={parseInt(id, 10)} />
+            <Game key={id} gameId={id} />
           ))
         }
       </div>
