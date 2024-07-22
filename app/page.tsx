@@ -70,9 +70,9 @@ export default function Coin() {
     const element: any = animRef.current;
     if (!element) return;
     if (direction == Direction.HEADS) {
-      element.style.animation = 'flip2 forwards 2s';
+      element.style.animation = 'flip2 forwards 1s';
     } else {
-      element.style.animation = 'flipReverse2 forwards 2s';
+      element.style.animation = 'flipReverse2 forwards 1s';
     }
     element.addEventListener("animationend", function r() {
       setResult(direction);

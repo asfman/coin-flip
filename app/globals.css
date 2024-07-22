@@ -137,15 +137,15 @@
         transform: rotateY(0deg);
       }
       to {
-        transform: rotateY(720deg);
+        transform: rotateY(1800deg);
       }
     }
     @keyframes flipReverse2 {
       from {
-        transform: rotateY(-180deg);
+        transform: rotateY(180deg);
       }
       to {
-        transform: rotateY(540deg);
+        transform: rotateY(1980deg);
       }
     }
     @keyframes flipSwitch {
