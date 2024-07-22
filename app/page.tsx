@@ -19,8 +19,8 @@ enum Direction {
 }
 
 const BETS = {
-  normal: [0.05, 0.1, 0.5, 1],
-  whale: [2, 3, 4, 5],
+  normal: [0.01, 0.05, 0.1, 0.5, 0.8, 1],
+  whale: [2, 3, 4, 5, 8, 10],
 };
 
 export default function Coin() {
@@ -194,7 +194,7 @@ export default function Coin() {
             <Switch checked={whaleMode} onCheckedChange={whaleHandler} id="whale-mode" />
             <Label htmlFor="whale-mode">Whale</Label>
           </div>
-          <div className="mb-2 rounded-full text-white bg-black coin-amount">
+          <div className="p-2 mb-2 sm:rounded-full rounded-2xl text-white bg-black coin-amount">
             {
               bets.map((bet, index) => (
                 <button onClick={amountHandler(bet)} key={index} className={cn("rounded-full px-3 min-w-[90px] py-2",
