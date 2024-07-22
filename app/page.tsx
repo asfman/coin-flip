@@ -194,7 +194,7 @@ export default function Coin() {
             <Switch checked={whaleMode} onCheckedChange={whaleHandler} id="whale-mode" />
             <Label htmlFor="whale-mode">Whale</Label>
           </div>
-          <div className="p-2 mb-2 sm:rounded-full rounded-2xl text-white bg-black coin-amount">
+          <div className="p-2 mb-2 sm:rounded-full sm:p-0 rounded-2xl text-white bg-black coin-amount">
             {
               bets.map((bet, index) => (
                 <button onClick={amountHandler(bet)} key={index} className={cn("rounded-full px-3 min-w-[90px] py-2",
