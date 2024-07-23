@@ -30,7 +30,9 @@ export default function Coin() {
   const [balance, setBalance] = useState(0);
   const [bets, setBets] = useState(BETS.normal);
   const [curBetDirection, setCurBetDirection] = useLocalStorage("curBetDirection", Direction.HEADS);
-  const [curBet, setCurBet] =  useState(0.1);
+  const [curBet, setCurBet] =  useState(BETS.normal[1]);
+  const[ normalBet, setNormalBet ] = useState(0);
+  const[ whaleBet, setWhaleBet ] = useState(0);
   const [whaleMode, setWhaleMode] =  useState(false);
   const [submitting, setSubmitting] = useState(false);
   const animRef = useRef(null);
@@ -45,7 +47,12 @@ export default function Coin() {
     const bets = whaleMode ? BETS.whale : BETS.normal;
     setBets(bets);
     if (!bets.includes(curBet)) {
-      setCurBet(bets[1]);
+      if (whaleMode && whaleBet) {
+        setCurBet(whaleBet);
+      } else if (!whaleMode && normalBet) {
+        setCurBet(normalBet);
+      } else
+        setCurBet(bets[1]);
     }
   }, [whaleMode]);
 
@@ -144,6 +151,11 @@ export default function Coin() {
   const amountHandler = (bet: any) => {
     return () => {
       setCurBet(bet);
+      if (whaleMode) {
+        setWhaleBet(bet);
+      } else {
+        setNormalBet(bet);
+      }
     };
   };
 
